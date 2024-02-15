@@ -23,6 +23,7 @@
             <div class="col-md-3" id="tampil_rincian">
            
             </div>
+            
             <div class="col-md-9">
             <div class="row" style="margin-bottom:30px;">
                   <div class="col-lg-8 col-md-10 ml-auto mr-auto">
@@ -61,6 +62,7 @@
         
         <?php
             include "rincian_pesan.php";
+            include "rincian_bayar.php";
         ?>
 
         <script>
@@ -129,9 +131,13 @@
           var id = $(this).attr('id');
           $('#rincianModal').modal('show');
           $('#rincianModal #jumlahPesan').focus();
-          //alert(id);
-
+          //alert(id)
       });
+
+      function bayar_nota(){ 
+          $('#rincianBayar').modal('show');
+          //alert(id)
+      }
 
 
         </script>

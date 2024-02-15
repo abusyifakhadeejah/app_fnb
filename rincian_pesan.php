@@ -62,7 +62,7 @@
         num.text(numVal);
         $enteredNumbers.append(num);
         STATE.enteredPin += numVal;
-        setTimeout(() => num.addClass('hidden'), 500);
+        //setTimeout(() => num.addClass('hidden'), 500);
       }
       
       backspaceOnPin = function(e){

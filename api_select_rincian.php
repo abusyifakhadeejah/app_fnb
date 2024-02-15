@@ -28,3 +28,4 @@
     </tbody>
 </table>
 <h2 style="color:white;">TOTAL : <?php echo number_format($total_nota,0);?></h2>
+<button class="btn btn-primary btn-block" onclick="bayar_nota()">Bayar</button>

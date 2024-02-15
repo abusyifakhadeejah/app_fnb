@@ -43,14 +43,14 @@
                  
                 </div>
                 <div class="card-body">
-                  <form action="dashboard.php">
+                  <form id="formLogin" action="dashboard.php">
              
                   
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="bmd-label-floating">Nama Kasir</label>
-                          <input type="text" class="form-control">
+                          <input id="username" type="text" class="form-control">
                         </div>
                       </div>
                     </div>
@@ -59,13 +59,13 @@
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="bmd-label-floating">Password</label>
-                          <input type="password" class="form-control">
+                          <input id="password" type="password" class="form-control">
                         </div>
                       </div>
                     </div>
                  
                    
-                    <button type="submit" onclick="md.showNotification('top','right')" class="btn btn-primary pull-right">Login</button>
+                    <button type="submit"  class="btn btn-primary pull-right">Login</button>
                     <div class="clearfix"></div>
                   </form>
                 </div>
@@ -95,3 +95,31 @@
 </body>
 
 </html>
+<script>
+$("#loginForm").submit(function(event)
+{
+    event.preventDefault();
+    $.ajax({
+        type: "GET",
+        datatype:"json",
+        url: "api_login.php",
+        data:({
+            username : $('#username').val(),
+            password: $('#password').val()
+        }),
+        success: function(result)
+        {
+            if(result && result.auth_token.length>1) // you should do your checking here
+            {
+                window.location = 'http://www.google.com/'; //just to show that it went through
+            }
+            else
+            {
+                $('#result').empty().addClass('error')
+                    .append('Something is wrong.');
+            }
+        }
+    });
+    return false;
+}
+</script>
