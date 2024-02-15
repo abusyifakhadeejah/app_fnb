@@ -1,8 +1,8 @@
 
-        <?php
+<?php
             include "koneksi.php";
             $no=1;
-            $data=mysqli_query($koneksi, "SELECT * FROM tbl_menu");
+            $data=mysqli_query($koneksi, "SELECT * FROM tbl_menu WHERE kategori='minuman'");
             while($d=mysqli_fetch_array($data)){
                 ?>
                 <div class="col-md-3">
