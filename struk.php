@@ -31,7 +31,7 @@
     <center id="top">
       <div class="logo"></div>
       <div class="info"> 
-        <h2>Ataris Teknologi</h2>
+        <h2>Cafe </h2>
       </div><!--End Info-->
     </center><!--End InvoiceTop-->
  
