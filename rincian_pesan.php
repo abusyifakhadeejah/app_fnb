@@ -27,7 +27,7 @@
                 <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
-                          <input type="text" name="jumlahPesan" id="jumlahPesan" class="form-control" value="" >
+                          <input type="text" name="jumlah_pesan" id="jumlahPesan" class="form-control" value="" >
                         </div>
                       </div>
                   </div>
