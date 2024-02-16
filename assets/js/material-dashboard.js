@@ -291,7 +291,7 @@ md = {
       }
     });
   },
-
+  
   checkScrollForTransparentNavbar: debounce(function() {
     if ($(document).scrollTop() > 260) {
       if (transparent) {

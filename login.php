@@ -50,7 +50,7 @@
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="bmd-label-floating">Nama Kasir</label>
-                          <input id="username" type="text" class="form-control">
+                          <input name="username" type="text" class="form-control" value="">
                         </div>
                       </div>
                     </div>
@@ -59,7 +59,7 @@
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="bmd-label-floating">Password</label>
-                          <input id="password" type="password" class="form-control">
+                          <input name="password" type="password" class="form-control" value="">
                         </div>
                       </div>
                     </div>
@@ -96,30 +96,21 @@
 
 </html>
 <script>
-$("#loginForm").submit(function(event)
-{
-    event.preventDefault();
+$(document).on('submit','#formLogin',function(e){
+    e.preventDefault();
+   
     $.ajax({
-        type: "GET",
-        datatype:"json",
-        url: "api_login.php",
-        data:({
-            username : $('#username').val(),
-            password: $('#password').val()
-        }),
-        success: function(result)
-        {
-            if(result && result.auth_token.length>1) // you should do your checking here
-            {
-                window.location = 'http://www.google.com/'; //just to show that it went through
-            }
-            else
-            {
-                $('#result').empty().addClass('error')
-                    .append('Something is wrong.');
-            }
-        }
-    });
-    return false;
-}
+    method:"POST",
+    url: "api_login.php",
+    data:$(this).serialize(),
+    success: function(data){
+      alert(data);
+    if(data === 'success') {
+        window.location.href="dashboard.php";
+    } else {
+      md.showLoginNotification('top','left');
+    }
+     
+}});
+});
 </script>
