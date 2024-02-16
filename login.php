@@ -104,7 +104,7 @@ $(document).on('submit','#formLogin',function(e){
     url: "api_login.php",
     data:$(this).serialize(),
     success: function(data){
-      alert(data);
+
     if(data === 'success') {
         window.location.href="dashboard.php";
     } else {

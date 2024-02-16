@@ -62,7 +62,6 @@
         
         <?php
             include "rincian_pesan.php";
-            include "rincian_bayar.php";
         ?>
 
         <script>
@@ -125,19 +124,11 @@
             })
         }
 
-
-       
         $(document).on('click', '.pesan', function(){ 
           var id = $(this).attr('id');
           $('#rincianModal').modal('show');
-          $('#rincianModal #jumlahPesan').focus();
+          $(".modal-body #idMenu").val(id);
           //alert(id)
       });
-
-      function bayar_nota(){ 
-          $('#rincianBayar').modal('show');
-          //alert(id)
-      }
-
 
         </script>

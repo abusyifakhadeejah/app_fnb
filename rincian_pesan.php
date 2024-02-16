@@ -9,24 +9,29 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form id="confirmPesan" method="post">
             <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Nama Menu</label>
                           <input type="text" id="idMenu" name="id_menu" class="form-control" value="">
+                        </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <input type="text" id="hargaMenu" name="harga" class="form-control" value="">
                         </div>
                       </div>
                   </div>
                 <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Jumlah Pesam</label>
-                          <input type="text" name="jumlahPesan" id="jumlahPesan" class="form-control" >
+                          <input type="text" name="jumlahPesan" id="jumlahPesan" class="form-control" value="" >
                         </div>
                       </div>
                   </div>
-        </form>
+        
 
   <div class="keypad dark"></div>
       <div class="modal-footer">
@@ -34,11 +39,12 @@
         <button type="submit" class="btn btn-primary">Save changes</button>
       </div>
     </div>
+    </form>
   </div>
 </div>
 
 <script>
-      ;(function($){
+  (function($){
   $.fn.keypad = function(confirmPin, options){
     var globalSettings = $.extend({}, $.fn.keypad.defaults, options);
 		var keypads = $();
@@ -140,6 +146,7 @@
     </div>`);
       $confirm.on('click', function(){
         confirmPin(STATE.enteredPin);
+        key.clear();
       });
       $numbers.append($confirm);
       
@@ -228,7 +235,8 @@
 
 /* DEMO */
  var key = $(".modal-body .keypad").keypad(function(pin){
-  alert(pin)
+  alert(pin);
+  $(".modal-body #jumlahPesan").val(pin);
 });
 
 setTimeout(function(){
@@ -251,4 +259,21 @@ setTimeout(function(){
   key.clear();
 }, 5000)
 
+$(document).on('submit','#confirmPesan',function(e){
+    e.preventDefault();
+    $('#rincianModal').modal('hide');
+    $.ajax({
+    method:"POST",
+    url: "api_simpan_rincian.php",
+    data:$(this).serialize(),
+    success: function(data){
+      tampil_rincian();
+    /*if(data === 'success') {
+        window.location.href="dashboard.php";
+    } else {
+      md.showLoginNotification('top','left');
+    }*/
+     
+}});
+});
 </script>
