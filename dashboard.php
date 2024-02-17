@@ -124,6 +124,22 @@
             })
         }
 
+
+        $(document).on('click', '.hapus_rincian', function(){ 
+                    var id = $(this).attr('id');
+               
+                    $.ajax({
+                    type: 'POST',
+                    url: "api_delete_rincian.php",
+                    data: {id:id}, 
+                    success: function(response) { 
+                        //setelah simpan data, update data terbaru
+                    tampil_rincian(); 
+                    }
+                    });
+                    });
+
+
         $(document).on('click', '.pesan', function(){ 
           var id = $(this).attr('id');
           var harga = $(this).attr('harga');

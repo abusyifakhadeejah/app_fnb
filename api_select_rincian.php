@@ -1,6 +1,7 @@
 <table class='table table-hover table-responsive'>
     <thead>
         <tr>
+        <th></th>
             <th>Jml</th>
             <th>Nama Menu</th>
             <th>Harga</th>
@@ -16,6 +17,7 @@
             while($d=mysqli_fetch_array($data)){
                 ?>
                 <tr>
+                <td><button id="<?php echo $d['id_rincian']; ?>" class="btn btn-danger btn-sm hapus_rincian">x</button></td>
                 <td><?php echo $d['jumlah_beli']; ?></td>
                     <td><?php echo $d['nama_menu']; ?></td>
                     <td><?php echo $d['harga']; ?></td>
