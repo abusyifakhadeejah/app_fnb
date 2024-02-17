@@ -134,7 +134,7 @@
           url: "api_simpan_rincian.php",
           data:{id:id,harga:harga,jumlah:jumlah}, 
           success: function(data){
-            alert(data);
+
             tampil_rincian();
           /*if(data === 'success') {
               window.location.href="dashboard.php";
