@@ -24,6 +24,12 @@
               <p>Kasir</p>
             </a>
           </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="data_pelanggan.php">
+              <i class="material-icons">person</i>
+              <p>Pelanggan</p>
+            </a>
+          </li>
 
           <li class="nav-item ">
             <a class="nav-link" href="data_transaksi.php">

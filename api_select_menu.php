@@ -18,7 +18,7 @@
                         <p class="card-description">
                         <?php echo $d['kategori']; ?>
                         </p>
-                        <a href="#pablo" id="<?php echo $d['id_menu']; ?>" class="btn btn-success pesan">Pesan</a>
+                        <a href="#pablo" id="<?php echo $d['id_menu']; ?>" harga="<?php echo $d['harga_jual']; ?>" jumlah="1" class="btn btn-success pesan">Pesan</a>
                         </div>
                     </div>
                 </div>

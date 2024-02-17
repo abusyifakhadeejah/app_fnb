@@ -126,9 +126,23 @@
 
         $(document).on('click', '.pesan', function(){ 
           var id = $(this).attr('id');
-          $('#rincianModal').modal('show');
-          $(".modal-body #idMenu").val(id);
-          //alert(id)
+          var harga = $(this).attr('harga');
+          var jumlah = $(this).attr('jumlah');
+
+          $.ajax({
+          method:"POST",
+          url: "api_simpan_rincian.php",
+          data:{id:id,harga:harga,jumlah:jumlah}, 
+          success: function(data){
+            alert(data);
+            tampil_rincian();
+          /*if(data === 'success') {
+              window.location.href="dashboard.php";
+          } else {
+            md.showLoginNotification('top','left');
+          }*/
+          
+      }});
       });
 
         </script>
