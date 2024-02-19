@@ -13,4 +13,5 @@
   <!-- Material Kit CSS -->
   <link href="assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
   <link href="assets/css/calculator.css" rel="stylesheet" />
+  <script type="text/javascript" src="assets/js/jam.js"></script>
 </head>

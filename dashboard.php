@@ -4,6 +4,7 @@
 ?>
 <body class="dark-edition">
   <div class="wrapper" >
+  <div id="myDiv"></div>
       <!-- Navbar -->
       <?php
             include "menu.php";
@@ -164,8 +165,6 @@
       {
         totalNota=$('#totalNota').val();
         jumlahBayar=$('#jumlahBayar').val();
-        
-        $('#sisaBayar').html('Kembali : '+(jumlahBayar-totalNota
-        ));
+        $('#sisaBayar').html(jumlahBayar-totalNota);
       }
         </script>

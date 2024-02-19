@@ -1,3 +1,4 @@
+<hr>
 <table class='table table-hover table-responsive'>
     <thead>
         <tr>
@@ -30,9 +31,7 @@
     </tbody>
 </table>`
 <h2 style="color:white;">TOTAL : <?php echo number_format($total_nota,0);?></h2>
-
-<label>Jumlah Bayar</label><input type="text" id="jumlahBayar" onkeyup="hitung_kembalian()" />
-
 <h2 style="color:white;" id="sisaBayar"></h2>
+<label>jumlah Bayar</label><input type="text" id="jumlahBayar" onkeyup="hitung_kembalian()" />
 <input type="hidden" id="totalNota" value="<?php echo $total_nota ?>"/>
-<button class="btn btn-primary btn-block" onclick="bayar_nota()">Cetak Nota</button>
+<button class="btn btn-primary btn-block" onclick="bayar_nota()">Bayar</button>
