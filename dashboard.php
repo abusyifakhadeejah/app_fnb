@@ -4,7 +4,7 @@
 ?>
 <body class="dark-edition">
   <div class="wrapper" >
-  <div id="myDiv"></div>
+ 
       <!-- Navbar -->
       <?php
             include "menu.php";
@@ -119,8 +119,9 @@
                 url:'api_select_rincian.php',
                 type:'get',
                 success: function(data){
-                  console.log(data);
-                    $('#tampil_rincian').html(data);
+                   $('#tampil_rincian').html(data);
+                    totalNota=$('#totalNota').val();
+                    $('#displayTotal').html('TOTAL NOTA : '+totalNota);
                 }
             })
         }
@@ -137,6 +138,11 @@
                     tampil_rincian(); 
                     }
               });
+          });
+
+          $(document).on('click', '#btnBayar', function(){ 
+             $('#btnBayar').attr('hidden','hidden');
+             $('#panelBayar').removeAttr('hidden');
           });
 
 
@@ -165,6 +171,6 @@
       {
         totalNota=$('#totalNota').val();
         jumlahBayar=$('#jumlahBayar').val();
-        $('#sisaBayar').html(jumlahBayar-totalNota);
+        $('#sisaBayar').html('KEMBALI : '+(jumlahBayar-totalNota));
       }
         </script>
