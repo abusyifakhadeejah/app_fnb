@@ -127,7 +127,6 @@
 
         $(document).on('click', '.hapus_rincian', function(){ 
                     var id = $(this).attr('id');
-               
                     $.ajax({
                     type: 'POST',
                     url: "api_delete_rincian.php",
@@ -136,8 +135,8 @@
                         //setelah simpan data, update data terbaru
                     tampil_rincian(); 
                     }
-                    });
-                    });
+              });
+          });
 
 
         $(document).on('click', '.pesan', function(){ 
@@ -161,4 +160,12 @@
       }});
       });
 
+      function hitung_kembalian()
+      {
+        totalNota=$('#totalNota').val();
+        jumlahBayar=$('#jumlahBayar').val();
+        
+        $('#sisaBayar').html('Kembali : '+(jumlahBayar-totalNota
+        ));
+      }
         </script>
