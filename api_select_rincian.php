@@ -16,6 +16,7 @@
             <th>Harga</th>
             <th>Total</th>
         </tr>
+        
     </thead>
     <tbody>
         <?php

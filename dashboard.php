@@ -126,6 +126,21 @@
             })
         }
 
+        function bayar_nota(){
+            $.ajax({
+                url:'api_bayar
+                _rincian.php',
+                type:'get',
+                success: function(data){
+                   $('#tampil_rincian').html(data);
+                    totalNota=$('#totalNota').val();
+                    $('#displayTotal').html('TOTAL NOTA : '+totalNota);
+                }
+            })
+        }
+
+        
+
 
         $(document).on('click', '.hapus_rincian', function(){ 
                     var id = $(this).attr('id');
