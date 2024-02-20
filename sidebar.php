@@ -12,12 +12,17 @@
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item active  ">
-            <a class="nav-link" href="dashboard.php">
+            <a class="nav-link" href="dashboard_admin.php">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
-
+          <li class="nav-item ">
+            <a class="nav-link" href="dashboard.php">
+              <i class="material-icons">dashboard</i>
+              <p>Dashboard Penjualan</p>
+            </a>
+          </li>
           <li class="nav-item ">
             <a class="nav-link" href="data_kasir.php">
               <i class="material-icons">person</i>
