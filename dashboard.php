@@ -150,7 +150,7 @@
           var id = $(this).attr('id');
           var harga = $(this).attr('harga');
           var jumlah = $(this).attr('jumlah');
-
+          
           $.ajax({
           method:"POST",
           url: "api_simpan_rincian.php",

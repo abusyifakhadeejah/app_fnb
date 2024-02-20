@@ -22,7 +22,7 @@
             include "koneksi.php";
             $total_nota=0;
             $no=1;
-            $data=mysqli_query($koneksi, "SELECT * FROM tbl_rincian,tbl_menu WHERE tbl_menu.id_menu = tbl_rincian.id_menu");
+            $data=mysqli_query($koneksi, "SELECT * FROM tbl_rincian,tbl_menu WHERE tbl_menu.id_menu = tbl_rincian.id_menu AND tbl_rincian.status='dipesan'");
             while($d=mysqli_fetch_array($data)){
                 ?>
                 <tr>
