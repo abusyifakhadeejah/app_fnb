@@ -4,6 +4,7 @@
     $jumlah_beli = $_POST['jumlah'];
     $id_pemesanan = '1';
     $harga =  $_POST['harga'];
+    $tanggal=date('Y-m-d');
    
     //cek jumlah
     $data=mysqli_query($koneksi,"select * from tbl_rincian where id_menu='$id_menu' AND status='dipesan' ");
@@ -21,7 +22,7 @@
     {
         $upjumlah_beli=$jumlah_beli;
         $total_harga = $harga*$upjumlah_beli;
-        mysqli_query($koneksi,"insert into tbl_rincian values('','$id_menu','$upjumlah_beli','$id_pemesanan','$harga','$total_harga','dipesan')");
+        mysqli_query($koneksi,"insert into tbl_rincian values('','$id_menu','$upjumlah_beli','$id_pemesanan','$harga','$total_harga','dipesan','$tanggal')");
     }
     //jika ada
     
