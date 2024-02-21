@@ -128,8 +128,7 @@
 
         function bayar_nota(){
             $.ajax({
-                url:'api_bayar
-                _rincian.php',
+                url:'api_bayar_rincian.php',
                 type:'get',
                 success: function(data){
                    $('#tampil_rincian').html(data);
